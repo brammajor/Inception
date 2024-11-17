@@ -11,34 +11,34 @@ all:
 	@echo "re      : Clean everything, rebuild images without cache, and bring the services back up."
 
 up:
-	mkdir -p /home/brmajor/data
-	mkdir -p /home/brmajor/data/wordpress
-	mkdir -p /home/brmajor/data/mariadb
-	docker-compose -f srcs/docker-compose.yml up -d
+	mkdir -p /home/bram/data
+	mkdir -p /home/bram/data/wordpress
+	mkdir -p /home/bram/data/mariadb
+	sudo docker-compose -f srcs/docker-compose.yml up -d
 
 build:
-	docker-compose -f srcs/docker-compose.yml build
+	sudo docker-compose -f srcs/docker-compose.yml build
 
 rebuild:
-	docker-compose -f srcs/docker-compose.yml build --no-cache
+	sudo docker-compose -f srcs/docker-compose.yml build --no-cache
 
 stop:
-	docker-compose -f srcs/docker-compose.yml stop
+	sudo docker-compose -f srcs/docker-compose.yml stop
 
 down:
-	docker-compose -f srcs/docker-compose.yml down
+	sudo docker-compose -f srcs/docker-compose.yml down
 
 logs:
-	docker-compose -f srcs/docker-compose.yml logs
+	sudo docker-compose -f srcs/docker-compose.yml logs
 
 status:
-	docker-compose -f srcs/docker-compose.yml ps
+	sudo docker-compose -f srcs/docker-compose.yml ps
 
 clean:
-	docker-compose -f srcs/docker-compose.yml down --rmi all --volumes
+	sudo docker-compose -f srcs/docker-compose.yml down --rmi all --volumes
 
 fclean: clean
-	rm -rf /home/brmajor/data
+	rm -rf /home/bram/data
 
 re: clean rebuild up
 

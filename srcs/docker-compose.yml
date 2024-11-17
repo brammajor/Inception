@@ -5,7 +5,7 @@ volumes:
     name: wordpress
     driver: local
     driver_opts:
-      device: /home/brmajor/data/wordpress
+      device: /home/bram/data/wordpress
       o: bind
       type: none
 
@@ -13,7 +13,7 @@ volumes:
     name: mariadb
     driver: local
     driver_opts:
-      device: /home/brmajor/data/mariadb
+      device: /home/bram/data/mariadb
       o: bind
       type: none
 
@@ -33,7 +33,7 @@ services:
     ports:
       - "443:443"
     depends_on:
-      -wordpress
+      - wordpress
     volumes:
       - wordpress:/var/www/html
     networks:

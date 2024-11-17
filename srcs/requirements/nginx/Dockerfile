@@ -8,7 +8,7 @@ ENV CERTS_=$CERTS_
 
 
 RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install nginx -y && apt-get instal openssl -y
+RUN apt-get install nginx -y && apt-get install openssl -y
 
 COPY /tools/ /
 
